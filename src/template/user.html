@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .menu{
+            position: fixed;
+            z-index: -1;
+            height: 50px;
+            width: 100%;
+            background-color: aliceblue;
+        }
+        .logo{
+            position: fixed;
+            width: 150px;
+            height: 70px;
+            padding-left: 45%;
+            
+        }
+        .boton{
+            position: fixed;
+            z-index: 100;
+            cursor: pointer;
+            width: 150px;
+            height: 30px;
+            background-color: darkcyan;
+            border-radius: 10px;
+            margin-left: 88%;
+            margin-top: 10px;
+            border: 0;
+        }
+        a{
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+            color: white;
+            font-size: 20px;
+        }
+        .boton:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+        .t{
+            font-family: 'Lobster', cursive;
+        }
+        .titulo{
+            padding-left: 100px;
+            padding-top: 100px;
+            font-size: 50px;
+        }
+        .video{
+            position: absolute;
+            top: 80px;
+        }
+        .catalogo{
+            position: absolute;
+            top: 1400px;
+        }
+        .comedia{
+            position: absolute;
+            top: 610px;
+            left: 5%;
+            font-size: 30px;
+        }
+        .comedia1{
+            position: absolute;
+            top: 650px;
+        }
+        .comedia2{
+            position: absolute;
+            top: 650px;
+            left: 33.3%;
+        }
+        .comedia3{
+            position: absolute;
+            top: 650px;
+            left: 66.6%;
+        }
+        .terror{
+            position: absolute;
+            top: 880px;
+            left: 5%;
+            font-size: 30px;
+        }
+        .terror1{
+            position: absolute;
+            top: 920px;
+        }
+        .terror2{
+            position: absolute;
+            top: 920px;
+            left: 33.3%;
+        }
+        .terror3{
+            position: absolute;
+            top: 920px;
+            left: 66.6%;
+        }
+        .amor{
+            position: absolute;
+            top: 1160px;
+            left: 5%;
+            font-size: 30px;
+        }
+        .amor1{
+            position: absolute;
+            top: 1200px;
+        }
+        .amor2{
+            position: absolute;
+            top: 1200px;
+            left: 33.3%;
+        }
+        .amor3{
+            position: absolute;
+            top: 1200px;
+            left: 66.6%;
+        }
+        .submenu{
+            background-color: darkcyan;
+            border-radius: 15px;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+        }
+        .sub2{
+            width: 600px;
+        }
+        .sub{
+            width: 100px;
+        }
+        .sub3{
+            width: 100px;
+        }
+        .carrito{
+            position: absolute;
+            top: 2000px;
+        }
+        .boton2{
+            position: absolute;
+            width: 130px;
+            height: 30px;
+            background-color: darkcyan;
+            cursor: pointer;
+            border-radius: 10px;/* 
+            margin-left: 92%;*/
+            top: 100px;
+            left: 500px;
+            border: 0;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .boton2:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+        .boton3{
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            background-color: rgb(57, 57, 57);
+            cursor: pointer;
+            border-radius: 10px;/* 
+            margin-left: 92%;*/
+            top: 0px;
+            left: 0px;
+            border: 0;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+        }
+        .boton3:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+    </style>
+    <div class="menu" style="position: fixed; z-index: 1;">
+        <img style="z-index: 2;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/732fbcf0-2d8e-4b50-a3d3-eb1009cfa497/dgc4hh6-2facc3a7-7fac-4673-8555-8e5c753c0113.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzczMmZiY2YwLTJkOGUtNGI1MC1hM2QzLWViMTAwOWNmYTQ5N1wvZGdjNGhoNi0yZmFjYzNhNy03ZmFjLTQ2NzMtODU1NS04ZTVjNzUzYzAxMTMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Ugtdn5uNBC0h8iFhz-uu_Uat4pRFdA7ONKiOhQrUjqo" class="logo" alt="logo">
+    </div>
+    <form action="/user/buscar" style="margin: 15px; position: fixed; z-index: 1;" method="GET" class="buscador">
+            <input class="cajabusca" type="text" id="buscar" name="dato" placeholder="Buscar por {{filtro}}...">
+            <button type="submit" class="t">Buscar</button>
+
+            <input type="radio" name="categoria" value="titulo" checked>Título
+            <input type="radio" name="categoria" value="publicacion">Año
+            <input type="radio" name="categoria" value="director">Director
+            <input type="radio" name="categoria" value="genero">Género
+    </form>
+    {% if limpiarFiltroBtn == true %}
+    <button class="boton t" style="margin-left: 480px;"><a href="{{url_for('user')}}">Limpiar filtros</a></button>
+    {% endif %}
+    <button class="boton t"><a href="{{url_for('index')}}" >Cerrar sesión</a></button>
+
+    <iframe class="video" width="1518" height="500" src="https://www.youtube.com/embed/_U6wd5HpQWQ?si=tOENLssm0ek7SXPB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h2 class="comedia t">Comedia</h2>
+
+    <iframe class="comedia1" width="505" height="215" src="https://www.youtube.com/embed/50zxE62QKlo?si=peFH6YyDFwzqAXCN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe class="comedia2" width="505" height="215" src="https://www.youtube.com/embed/feuDJPWFslk?si=uFnmWz_TXp1LBnou" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe class="comedia3" width="505" height="215" src="https://www.youtube.com/embed/9xl-FuXNi_4?si=C0k_-1R2GRCJgz9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h2 class="terror t">Terror</h2>
+
+    <iframe class="terror1" width="505" height="215" src="https://www.youtube.com/embed/0F5Mvm4TzoI?si=S6bXH616h3_KDBn_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe class="terror2" width="505" height="215" src="https://www.youtube.com/embed/crASuho89JI?si=S97SzxdrMQLfwESp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe class="terror3" width="505" height="215" src="https://www.youtube.com/embed/dr9bnUkjyWw?si=4BK4xUjUHGZSQBY9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h2 class="amor t">Amor</h2>
+
+    <iframe class="amor1" width="505" height="215" src="https://www.youtube.com/embed/Q9AtIdUd5-A?si=fR-S77l8TbIc2sOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe class="amor2" width="505" height="215" src="https://www.youtube.com/embed/9Lt8QAZkc94?si=lgitJzjrKUvbRsD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe class="amor3" width="505" height="215"src="https://www.youtube.com/embed/1EMkCJWQIDY?si=kQj1F1FKLRZUqGVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    {% block contenido %}
+
+<!-- Catálogo -->
+<section class="section catalogo">
+    <div class="columns">
+        <div class="column">
+            <h3 class="titulo t">Peliculas Disponibles</h3>
+            <table class="table">
+                <tbody>
+                    {% for peli in pelis %}
+                    {% if peli[7] >= 1 %}
+                    <form method="post" action="/user/comprar">
+                    <tr class="submenu">
+                        <td>
+                            <img src={{peli[6]}} alt="prueba" width="100" height="100"/>
+                        </td >
+                        <td class="sub">{{peli[1]}}</td>
+                        <td class="sub">{{peli[2]}}</td>
+                        <td class="sub">Director: {{peli[3]}}</td>
+                        <td class="sub">{{peli[4]}}</td>
+                        <td class="sub">2:00 hrs</td>
+                        <td class="sub">Cantidad: {{peli[7]}}</td>
+                        <td class="sub">${{peli[8]}}</td>
+                        <td class="sub2">
+                            <p>{{peli[5]}}</p>
+                        </td>
+                        <td class="sub3">
+                            <input type="hidden" name="code" value="{{peli[0]}}"/>
+                            <input type="hidden" name="cantidad" value="{{peli[7]}}"/>
+                            <input type="submit" value="Comprar" class="boton3 t" />
+                            <!-- <input type="text" class="product-quantity" name="quantity" value="1" size="2" style="align-content: end;" /> -->
+                        </td>
+                    </tr>
+                    </form>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+</body>
+</html>

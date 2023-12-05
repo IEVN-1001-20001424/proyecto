@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Administrador</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .menu{
+            position: fixed;
+            z-index: -1;
+            height: 50px;
+            width: 100%;
+            background-color: aliceblue;
+        }
+        .logo{
+            position: fixed;
+            width: 150px;
+            height: 70px;
+            padding-left: 45%;
+            
+        }
+        .boton{
+            position: absolute;
+            z-index: 100;
+            cursor: pointer;
+            width: 150px;
+            height: 30px;
+            background-color: darkcyan;
+            border-radius: 10px;
+            margin-left: 88%;
+            margin-top: 10px;
+            border: 0;
+        }
+        a{
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+            color: white;
+            font-size: 20px;
+        }
+        .boton:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+        .boton2{
+            width: 100px;
+            height: 30px;
+            background-color: darkcyan;
+            cursor: pointer;
+            border-radius: 10px;/* 
+            margin-left: 92%;*/
+            top: -15px;
+            border: 0;
+            color: white;
+            font-size: 20px;
+        }
+        .boton2:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+        .boton3{
+            width: 80px;
+            height: 30px;
+            background-color: rgb(57, 57, 57);
+            cursor: pointer;
+            border-radius: 10px;/* 
+            margin-left: 92%;*/
+            top: -15px;
+            border: 0;
+            color: white;
+            font-size: 20px;
+        }
+        .boton3:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+        .boton4{
+            width: 80px;
+            height: 30px;
+            background-color: rgb(57, 57, 57);
+            cursor: pointer;
+            border-radius: 10px;/* 
+            margin-left: 92%;*/
+            top: -15px;
+            border: 0;
+            color: white;
+            font-size: 20px;
+        }
+        .boton4:hover{
+            background-color:rgb(77, 107, 108);
+            transition: all 2s ease;
+        }
+        .t{
+            font-family: 'Lobster', cursive;
+        }
+        .titulo{
+            padding-left: 100px;
+            padding-top: 100px;
+            font-size: 50px;
+        }
+        .buscador{
+            position: relative;
+            left: 75%;
+            margin-top: -30px;
+        }
+        .buscadora{
+            width: 40px;
+            height: 40px;
+        }
+        .cajabusca{
+            width: 200px;
+            height: 30px;
+            border-radius: 15px;
+            top: -15px;
+        }
+        .botonadd{
+            position: fixed;
+            top: 86%;
+            left: 93%;
+        }
+        .botonadd img{
+            width: 100px;
+            height: 100px;
+        }
+        .table{
+            background-color: darkcyan;
+            height: 150px;
+            width: 100%;
+            border-radius: 15px;
+        }
+        .submenu{
+            background-color: rgb(57, 57, 57);
+            border-radius: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        .cinco{
+            width: 300px;
+        }
+        .dos{
+            width: 100px;
+        }
+        .sub{
+            border-radius: 15px;
+        }
+        .texto{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .sip{
+            font-size: 15px;
+            width: 400px;
+            text-align: justify;
+        }
+    </style>
+    
+    {% block contenido %}
+    <div class="menu">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/732fbcf0-2d8e-4b50-a3d3-eb1009cfa497/dgc4hh6-2facc3a7-7fac-4673-8555-8e5c753c0113.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzczMmZiY2YwLTJkOGUtNGI1MC1hM2QzLWViMTAwOWNmYTQ5N1wvZGdjNGhoNi0yZmFjYzNhNy03ZmFjLTQ2NzMtODU1NS04ZTVjNzUzYzAxMTMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Ugtdn5uNBC0h8iFhz-uu_Uat4pRFdA7ONKiOhQrUjqo" class="logo" alt="logo">
+    </div>
+    {% if limpiarFiltroBtn == true %}
+    <button class="boton" style="margin-left: 15px;"><a href="{{url_for('peliculas')}}">Limpiar filtros</a></button>
+    {% endif %}
+    <button class="boton"><a href="{{url_for('index')}}" >Cerrar sesión</a></button>
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            
+            <h1 class="t titulo">Inventario</h1>
+            <!-- buscador de Peliculas -->
+            <form action="/buscar_pelicula/{{filtro}}" method="GET" class="buscador">
+                <img class="buscadora" src="https://img.remediosdigitales.com/e2ace4/magnifying-glass-145942_640/1366_2000.png" alt="lupa">
+                <input type="hidden" name="categoria" value="{{filtro}}">
+                <input class="cajabusca" type="text" id="buscar" name="dato" placeholder="Buscar por {{filtro}}...">
+                <button type="submit" class="boton2 t">Buscar</button>
+            </form>
+            
+            <table class="table">
+                <thead class="submenu t">
+                    <tr>
+                        <th class="sub">Titulo</th>
+                        <th class="sub"><a href="{{ url_for('.categoria', categoria='publicacion') }}">Año</a></th>
+                        <th class="sub"><a href="{{ url_for('.categoria', categoria='director') }}">Director</a></th>
+                        <th class="sub"><a href="{{ url_for('.categoria', categoria='genero') }}">Genero</a></th>
+                        <th class="sub">Sipnosis</th>
+                        <th class="sub">Precio</th>
+                        <th class="sub">Cantidad</th>
+                        <th class="sub">Imagen</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for peli in pelis %}
+                    <tr class="texto">
+                        <td class="cinco">{{peli[1]}}</td>
+                        <td class="cinco">{{peli[2]}}</td>
+                        <td class="cinco">{{peli[3]}}</td>
+                        <td class="cinco">{{peli[4]}}</td>
+                        <td class="sip">{{peli[5]}}</td>
+                        <td class="cinco">${{peli[8]}}</td>
+                        <td class="cinco">{{peli[7]}}</td>
+                        <td class="dos">
+                        <img src={{peli[6]}} alt="prueba" width="100" height="100"/>
+                    </td>
+                        <td>
+                            {# Pasar el id (lo que hay en juego[0]) #}
+                            <button class="boton3 t"><a href="{{url_for('editar_pelicula', id_pelicula=peli[0])}}" >Editar</a></button>
+                        </td>
+                        <td>
+                            <form action="{{url_for('eliminar_pelicula')}}" method="POST">
+                                <input type="hidden" name="id_pelicula" value="{{peli[0]}}">
+                                <button class="boton4 t">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="{{url_for('form_agregar_pelicula')}}" class="botonadd"><img src="https://png.pngtree.com/png-vector/20230410/ourmid/pngtree-add-button-vector-png-image_6697932.png" alt="" ></a>
+</section>
+{% endblock %}
+</body>
+</html>

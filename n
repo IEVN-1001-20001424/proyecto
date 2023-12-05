@@ -1,0 +1,68 @@
+@app.route('/peliculas', methods=['GET'])
+def lista_peliculas():
+    try:
+        cursor=con.connection.cursor()
+        sql='select * from peliculas'
+        cursor.execute(sql)
+        datos=cursor.fetchall()
+        peliculas=[]
+        for fila in datos:
+            pelicula={'id_pelicula':fila[0],'titulo':fila[1],'fecha_publicacion':fila[2],
+                    'director':fila[3], 'genero':fila[4], 'sipnosis':fila[5], 'imagen':fila[6],}
+            peliculas.append(pelicula)
+            print(peliculas)
+        #return jsonify({'usuarios':usuarios,'mensaje':'Lista de Usuarios', 'exito':True})
+        return render_template('/index.html', pelis = peliculas)
+    except Exception as ex:
+        return jsonify({'mensaje':'error {}'.format(ex), 'exito':False})
+
+def leer_peliculas_bd(movie):
+    try:
+        cursor=con.connection.cursor()
+        sql='select * from peliculas where pelicula={0}'.format(movie)
+        cursor.execute(sql)
+        datos=cursor.fetchone()
+
+        if datos != None:
+            pelicula={'id_pelicula':datos[0],'titulo':datos[1],'fecha_publicacion':datos[2],
+                    'director':datos[3], 'genero':datos[4], 'sipnosis':datos[5], 'imagen':datos[6]}
+            return pelicula
+        else:
+            return None
+
+    except Exception as ex:
+        return ex
+
+@app.route('/peliculas/<movie>', methods=['GET'])
+def leer_pelicula(movie):
+    try:
+        pelicula=leer_peliculas_bd(movie)
+
+        if pelicula != None:
+            return jsonify({'pelicula':pelicula,'mensaje':'pelicula Encontrado', 'exito':True})
+        else:
+            return jsonify({'pelicula':pelicula,'mensaje':'pelicula No Encontrado', 'exito':True})
+        
+    except Exception as ex:
+        return jsonify({'mensaje':'error {}'.format(ex), 'exito':False})
+
+@app.route('/pelicula', methods=['POST'])
+def registrar_pelicula():
+    try:
+        pelicula = leer_peliculas_bd(request.json['id'])
+
+        if pelicula != None:
+            return jsonify({'mensaje':'Pelicula ya existe', 'exito':False})
+        else:
+            cursor=con.connection.cursor()
+            sql="""INSERT INTO peliculas(id_pelicula,titulo,fecha_publicacion,director,genero,sipnosis,imagen)
+            VALUES ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')""".format(request.json['id_pelicula'],
+            request.json['titulo'], request.json['fecha_publicacion'], request.json['director'],
+            request.json['genero'], request.json['sipnosis'], request.json['imagen'],)
+            cursor.execute(sql)
+            con.connection.commit()
+
+            return jsonify({'mensaje':'Pelicula Registrada', 'exito':True})
+
+    except Exception as ex:
+        return jsonify({'mensaje':'error {}'.format(ex), 'exito':False})

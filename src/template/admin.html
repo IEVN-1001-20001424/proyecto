@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    {% block contenido %}
+
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Inventario Peliculas</h3>
+            <a href="{{url_for('form_agregar_pelicula')}}" class="button is-success">Agregar</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Titulo</th>
+                        <th>Cantidad</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for peli in pelis %}
+                    <tr>
+                        <td><img src={{peli[6]}} alt="prueba" width="100" height="100"/></td>
+                        <td>{{peli[1]}}</td>
+                        <td>{{peli[7]}}</td>
+                        <td>{{peli[8]}}</td>
+                        <td>
+                            {# Pasar el id (lo que hay en juego[0] #}
+                            <a href="{{url_for('editar_pelicula', id_pelicula=peli[0])}}" class="button is-info">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{url_for('eliminar_pelicula')}}" method="POST">
+                                <input type="hidden" name="id_pelicula" value="{{peli[0]}}">
+                                <button class="button is-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}
+</body>
+</html>
